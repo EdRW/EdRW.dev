@@ -1,11 +1,11 @@
 export default {
-  title: "EdRW.codes",
-  url: "https://edrw.codes",
+  title: "EdRW.dev",
+  url: "https://edrw.dev",
   language: "en",
   description: "Edmund Rosewright's personal website and blog.",
   author: {
     name: "Edmund Rosewright",
-    url: "https://edrw.codes/about",
+    url: "https://edrw.dev/about",
     location: "Tokyo, Japan",
     links: [
       {

@@ -1,6 +1,6 @@
-# EdRW.codes 😸
+# EdRW.dev 😸
 
-The source code for my personal website, [EdRW.codes](https://edrw.codes).
+The source code for my personal website, [EdRW.dev](https://edrw.dev).
 
 ## Project Structure
 
