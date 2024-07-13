@@ -60,22 +60,7 @@
     </url>
     
     <url>
-      <loc>https://edrw.dev/tags/tag-a/</loc>
-      <lastmod>2024-07-13</lastmod>
-    </url>
-    
-    <url>
-      <loc>https://edrw.dev/tags/tag-b/</loc>
-      <lastmod>2024-07-13</lastmod>
-    </url>
-    
-    <url>
       <loc>https://edrw.dev/tags/made-up-tag/</loc>
-      <lastmod>2024-07-13</lastmod>
-    </url>
-    
-    <url>
-      <loc>https://edrw.dev/tags/tag-c/</loc>
       <lastmod>2024-07-13</lastmod>
     </url>
     
@@ -90,7 +75,22 @@
     </url>
     
     <url>
+      <loc>https://edrw.dev/tags/tag-a/</loc>
+      <lastmod>2024-07-13</lastmod>
+    </url>
+    
+    <url>
+      <loc>https://edrw.dev/tags/tag-b/</loc>
+      <lastmod>2024-07-13</lastmod>
+    </url>
+    
+    <url>
       <loc>https://edrw.dev/tags/tag-f/</loc>
+      <lastmod>2024-07-13</lastmod>
+    </url>
+    
+    <url>
+      <loc>https://edrw.dev/tags/tag-c/</loc>
       <lastmod>2024-07-13</lastmod>
     </url>
 </urlset>
