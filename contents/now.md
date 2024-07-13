@@ -32,6 +32,13 @@ nothing feels mundane, and everyday I'm learning something new!
 - [Scavengers Reign](https://www.imdb.com/title/tt21056886/) - If you like sci-fi, this animated series is a must-watch.
   I suggest you don't look up anything about it and just go in blind. 🤯 💯
 
+## Awesome Board Games 🎲
+
+- [Netrunner (Null Signal Game)](https://nullsignal.games/about/netrunner/)
+- [Wingspan](https://boardgamegeek.com/boardgame/266192/wingspan)
+- [Twilight Imperium](https://boardgamegeek.com/boardgame/233078/twilight-imperium-fourth-edition)
+- [Oath: Chronicles of Empire and Exile](https://boardgamegeek.com/image/5164812/oath)
+
 ## Recent Travels 🗾
 
 - [Kawanehon, Shizuoka](https://maps.app.goo.gl/JzXyBGEFrp6wsyfZ9)
