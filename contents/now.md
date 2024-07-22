@@ -41,10 +41,10 @@ nothing feels mundane, and everyday I'm learning something new!
 
 ## Recent Travels 🗾
 
-- [Kawanehon, Shizuoka](https://maps.app.goo.gl/JzXyBGEFrp6wsyfZ9)
+- [Guest House Mikansei](https://www.guesthousemikansei.com/) in Kawanehon, Shizuoka 😻
 - [Atami, Shizuoka](https://maps.app.goo.gl/S6kRbtSkosZ5LwRA7)
 - [Hiroshima, Hiroshima](https://maps.app.goo.gl/bgFmVoyPZTeiTs8E8)
-  - [Itsukushima (Miyajima), Hiroshima](https://maps.app.goo.gl/p4Axd9BkesGVd2XZ6)
+  - [Itsukushima (Miyajima), Hiroshima](https://maps.app.goo.gl/p4Axd9BkesGVd2XZ6) ⛩️
 - [Kinugawa Onsen, Tochigi](http://www.kinugawa-onsen.com/lg_en/)
 
 ## Health and Fitness Goals 💪✨
