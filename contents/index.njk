@@ -21,20 +21,24 @@ numberOfLatestPostsToShow: 3
 
 <p>If any of that sounds interesting to you, then you're in the right place!</p>
 
-<hr />
-
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h2>
-  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-</h2>
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "fragments/post-list.njk" %}
+{% if postCount > 0 %}
+  <hr />
+
+  <h2>
+    Latest {% if morePost > 0 %}{{ latestPostsCount }}{% endif %}
+    Post{% if latestPostsCount != 1 %}s{% endif %}
+  </h2>
+
+  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+  {% set postslistCounter = postsCount %}
+  {% include "fragments/post-list.njk" %}
+{% endif %}
 
 {# more posts #}
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
   <p>
     check out
