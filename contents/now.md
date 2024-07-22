@@ -15,7 +15,7 @@ nothing feels mundane, and everyday I'm learning something new!
 
 ## Learning new things 🧠
 
-- I've been having a lot of fun learning [Gleam](https://gleam.run/). It's a statically-typed, functional language with a focus on safety and simplicity.
+- I've been having a lot of fun learning [Gleam](https://gleam.run/) ⭐, a statically-typed, functional language with a focus on simplicity. It compiles to Erlang and Javascript.
   You should totally go through the language tour on the website, and then I recommend checking out the Gleam track over on [exercism.org](https://exercism.org/tracks/gleam).
 - After spending a few weeks studying, I'm happy to report that I passed the
   [Google Cloud Certified Professional Machine Learning Engineer](https://www.credly.com/badges/1b121c72-48ab-4b75-b99f-51d6209c40f0) exam! 🎉

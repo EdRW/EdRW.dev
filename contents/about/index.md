@@ -14,9 +14,9 @@ badges:
 
 # About Me
 
-I'm a software engineer driven by curiosity and a passion for lifelong learning. I enjoy tackling challenging problems and exploring new technologies to create innovative solutions. My industry experience in cloud software development, ML, machine vision, and industrial automation shapes my approach to product R&D.
+I'm a Google Cloud certified engineer driven by curiosity and a passion for lifelong learning. I enjoy tackling challenging problems and exploring new technologies to create innovative solutions. My industry experience in cloud software development, ML, machine vision, and industrial automation shapes my approach to product R&D.
 
-Most recently, I'm co-founder and developer of [QC Hero](https://qchero.com/about), a SaaS product that helps manufacturers use ML in their quality control processes. QC Hero simplifies training ML models on massive datasets in the cloud at scale. I'm also a Google Cloud Certified Professional Machine Learning Engineer.
+Most recently, I'm co-founder and developer of [QC Hero](https://qchero.com/about), a SaaS product that helps manufacturers use ML in their quality control processes. QC Hero simplifies training ML models on massive datasets in the cloud at scale.
 
 ## Education
 
