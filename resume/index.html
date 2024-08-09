@@ -1,0 +1,889 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Edmund Rosewright</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <style>
+      /* ul.keywords {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+} */
+      ul.keywords,
+      ul.courses {
+        list-style-type: none;
+        padding-left: 0;
+        li {
+          display: inline-block;
+          margin: 2px 2px 2px 0;
+          padding: 5px 5px 5px;
+          font-size: 0.9rem;
+          line-height: 1;
+          border: var(--pico-border-width) var(--pico-primary-border);
+          border-radius: var(--pico-border-radius);
+          /* white-space: nowrap; */
+
+          @media not print {
+            color: var(--pico-primary-inverse);
+            background-color: var(--pico-primary-background);
+            border-style: solid;
+          }
+        }
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 1fr;
+        gap: 0px 20px;
+        grid-auto-flow: row;
+      }
+      .timeline > div {
+        position: relative;
+      }
+
+      /* .timeline > div:not(:last-child) {
+  padding-bottom: 1rem;
+} */
+
+      .timeline > div:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: -15px;
+        width: 2px;
+        height: 100%;
+        background: var(--pico-primary-background);
+        box-sizing: unset;
+      }
+
+      .timeline > div:not(:only-child)::after {
+        content: "";
+        position: absolute;
+        top: 0.3rem;
+        left: -20px;
+        width: 8px;
+        height: 8px;
+        background: var(--pico-primary-background);
+        border: 2px solid var(--pico-background-color);
+        border-radius: 50%;
+        box-sizing: unset;
+      }
+
+      .profile-icon svg {
+        height: 1rem;
+        margin-right: var(--pico-spacing);
+      }
+
+      .highlights {
+        font-size: 0.95rem;
+      }
+
+      h3 {
+        border-bottom: 1px solid var(--pico-color);
+      }
+
+      .dated-header {
+        display: flex;
+        justify-content: space-between;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin-bottom: 0;
+        }
+        /* align-items: center; */
+      }
+      .dotted-hr {
+        border-top: 1px dashed var(--pico-muted-border-color);
+      }
+
+      .cert {
+        font-size: 0.75em;
+      }
+
+      .print-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      }
+
+      @media print {
+        :root {
+          font-size: 13;
+          --pico-font-family-sans-serif: Inter, system-ui, "Segoe UI", Roboto,
+            Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
+            sans-serif, var(--pico-font-family-emoji);
+          --pico-font-size: 87.5%;
+          /* Original: 100% */
+          --pico-line-height: 1.25;
+          /* Original: 1.5 */
+          --pico-form-element-spacing-vertical: 0.5rem;
+          /* Original: 1rem */
+          --pico-form-element-spacing-horizontal: 1rem;
+          /* Original: 1.25rem */
+          --pico-border-radius: 0.375rem;
+          /* Original: 0.25rem */
+          --pico-typography-spacing-vertical: 0.5rem;
+          /* Original: 1rem */
+          --pico-spacing: 0.5rem;
+          /* Original: 1rem */
+        }
+
+        @media (min-width: 576px) {
+          :root {
+            --pico-font-size: 87.5%;
+            /* Original: 106.25% */
+          }
+          .grid {
+            grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+          }
+        }
+
+        @media (min-width: 768px) {
+          :root {
+            --pico-font-size: 87.5%;
+            /* Original: 112.5% */
+          }
+        }
+
+        @media (min-width: 1024px) {
+          :root {
+            --pico-font-size: 87.5%;
+            /* Original: 118.75% */
+          }
+        }
+
+        @media (min-width: 1280px) {
+          :root {
+            --pico-font-size: 87.5%;
+            /* Original: 125% */
+          }
+        }
+
+        @media (min-width: 1536px) {
+          :root {
+            --pico-font-size: 87.5%;
+            /* Original: 131.25% */
+          }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          --pico-font-weight: 500;
+          /* Original: 700 */
+        }
+
+        h1 {
+          --pico-font-size: 2rem;
+          --pico-line-height: 1.125;
+          --pico-typography-spacing-top: 3rem;
+        }
+
+        h2 {
+          --pico-font-size: 1.5rem;
+          --pico-line-height: 1.175;
+          --pico-typography-spacing-top: 2.25rem;
+        }
+
+        h3 {
+          --pico-font-size: 1.25rem;
+          --pico-line-height: 1.2;
+          --pico-typography-spacing-top: 1.874rem;
+        }
+
+        h4 {
+          --pico-font-size: 1.125rem;
+          --pico-line-height: 1.225;
+          --pico-typography-spacing-top: 1.6875rem;
+        }
+
+        h5 {
+          --pico-font-size: 1rem;
+          --pico-line-height: 1.25;
+          --pico-typography-spacing-top: 1.5rem;
+        }
+
+        h6 {
+          --pico-font-size: 1rem;
+          --pico-line-height: 1.25;
+          --pico-typography-spacing-top: 1.5rem;
+        }
+
+        article {
+          border: 1px solid var(--pico-muted-border-color);
+          /* Original doesn't have a border */
+          border-radius: calc(var(--pico-border-radius) * 2);
+          /* Original: var(--pico-border-radius) */
+        }
+
+        article > footer {
+          border-radius: calc(var(--pico-border-radius) * 2);
+          /* Original: var(--pico-border-radius) */
+        }
+
+        .container {
+          max-width: 100%;
+        }
+
+        ul.keywords,
+        ul.courses {
+          li {
+            color: var(--pico-color);
+            border-style: dashed;
+            /* white-space: nowrap; */
+          }
+        }
+
+        body > main {
+          padding-block: 0;
+        }
+
+        .page-break {
+          /* margin-top: 30px; */
+          page-break-inside: avoid;
+        }
+
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Edmund Rosewright</h1>
+      <h2>Developer, Co-Founder at QC Hero, Inc.</h2>
+    </header>
+
+    <main class="container">
+      <div class="layout">
+        <aside>
+          <section>
+            <h3>About</h3>
+            <address>
+              <div>
+                <span class="profile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7m0 2a5 5 0 0 0-5 5c0 1 0 3 5 9.71C17 12 17 10 17 9a5 5 0 0 0-5-5"></path>
+                  </svg>
+                </span>
+                Tokyo JP
+              </div>
+              <div>
+                <span class="profile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"></path></svg></span>
+                <a href="mailto:hi@edrw.dev">hi@edrw.dev</a>
+              </div>
+              <div>
+                <span class="profile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"></path>
+                  </svg>
+                </span>
+                <a href="https://edrw.dev">edrw.dev</a>
+              </div>
+            </address>
+
+            <div>
+              <div>
+                <span class="profile-icon"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>LinkedIn</title>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></span>
+
+                <a href="https://www.linkedin.com/in/edmundrosewright/" target="_blank">
+                  edmundrosewright
+                </a>
+              </div>
+              <div>
+                <span class="profile-icon"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>GitLab</title>
+                    <path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"></path></svg></span>
+
+                <a href="https://www.gitlab.com/EdRW" target="_blank"> EdRW </a>
+              </div>
+              <div>
+                <span class="profile-icon"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>GitHub</title>
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></span>
+
+                <a href="https://www.github.com/EdRW" target="_blank"> EdRW </a>
+              </div>
+              <div>
+                <span class="profile-icon"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <title>Exercism</title>
+                    <path d="M4.35 1.66c-.959 0-1.686.298-2.181.893-.496.595-.744 1.464-.744 2.605v3.474c0 .805-.086 1.424-.259 1.858-.173.434-.493.84-.96 1.218-.138.113-.206.206-.206.278 0 .072.068.165.205.277.476.386.798.794.967 1.225.17.43.253 1.047.253 1.851v3.462c0 1.15.25 2.023.75 2.618.5.595 1.224.892 2.174.892h.882c.379 0 .618-.018.72-.054.1-.036.15-.127.15-.271 0-.201-.133-.334-.399-.398l-.483-.109c-1.063-.241-1.595-1.29-1.595-3.148v-3.293c0-1.247-.302-2.127-.906-2.642l-.23-.193c-.112-.096-.168-.169-.168-.217 0-.056.056-.129.169-.217l.23-.193c.603-.515.905-1.395.905-2.642V5.641c0-1.11.135-1.88.405-2.31.27-.43.832-.762 1.685-.995.258-.073.387-.19.387-.35 0-.217-.29-.326-.87-.326zm14.419.029c-.58 0-.87.108-.87.325 0 .161.128.278.386.35.854.233 1.416.565 1.686.995.27.43.405 1.2.405 2.31v3.294c0 1.246.302 2.126.906 2.641l.229.193c.113.089.17.161.17.217 0 .049-.057.121-.17.217l-.23.193c-.603.515-.905 1.396-.905 2.642v3.293c0 1.858-.532 2.907-1.595 3.149l-.484.108c-.266.064-.398.197-.398.398 0 .145.05.235.15.272.102.036.341.054.72.054h.882c.95 0 1.675-.298 2.174-.893.5-.595.75-1.467.75-2.617v-3.462c0-.805.084-1.422.253-1.852.17-.43.491-.838.967-1.224.137-.113.205-.205.205-.278 0-.072-.068-.165-.205-.277-.468-.378-.788-.784-.961-1.218-.173-.435-.26-1.054-.26-1.858V5.187c0-1.142-.247-2.01-.743-2.606-.495-.595-1.222-.892-2.18-.892zM7.683 9.735c-1.456 0-2.64 1.111-2.64 2.478h1.02c0-.838.727-1.52 1.62-1.52.892 0 1.619.682 1.619 1.52h1.02c0-1.367-1.183-2.478-2.64-2.478zm8.406 0c-1.456 0-2.639 1.111-2.639 2.478h1.02c0-.838.727-1.52 1.62-1.52.892 0 1.62.682 1.62 1.52h1.02c0-1.367-1.185-2.478-2.64-2.478zM9.71 14.36v.561c0 1.277 1.062 2.316 2.366 2.316 1.305 0 2.367-1.039 2.367-2.316v-.56h-.934v.56c0 .877-.76 1.426-1.433 1.426s-1.48-.273-1.48-1.426v-.56z"></path></svg></span>
+
+                <a href="https://exercism.org/profiles/EdRW" target="_blank">
+                  EdRW
+                </a>
+              </div>
+            </div>
+          </section>
+          <section id="skills">
+            <h3>Skills</h3>
+            <div>
+              <div>
+                <h4>Programming Languages</h4>
+                <ul class="keywords">
+                  <li>Typescript / Javascript</li>
+                  <li>Python (with type annotations)</li>
+                  <li>C#</li>
+                  <li>Java</li>
+                  <li>Gleam</li>
+                  <li>LabVIEW</li>
+                  <li>and more...</li>
+                </ul>
+              </div>
+              <div>
+                <h4>DevOps</h4>
+                <ul class="keywords">
+                  <li>Google Cloud Platform</li>
+                  <li>Cloud Deployment Manager</li>
+                  <li>Container Orchestration</li>
+                  <li>GitLab CI/CD</li>
+                  <li>GitHub Actions</li>
+                  <li>Monorepo (Nx, Turborepo)</li>
+                  <li>Shell Scripting (Bash, Fish)</li>
+                  <li>Linux (Ubuntu, Pop!_OS)</li>
+                </ul>
+              </div>
+              <div>
+                <h4>MLOps</h4>
+                <ul class="keywords">
+                  <li>Pipeline Orchestration</li>
+                  <li>Kubeflow Pipelines</li>
+                  <li>Google Cloud Vertex AI</li>
+                  <li>TensorFlow</li>
+                  <li>Keras</li>
+                  <li>Distributed Training</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section id="languages">
+            <h4>Languages</h4>
+
+            <ul class="keywords">
+              <li>English <em>(Native Speaker)</em></li>
+              <li>Japanese <em>(Intermediate)</em></li>
+            </ul>
+          </section>
+          <section id="certificates" class="page-break">
+            <h3>Certifications</h3>
+            <div>
+              <header class="dated-header">
+                <a target="_blank" href="https://www.credly.com/badges/1b121c72-48ab-4b75-b99f-51d6209c40f0">Google Cloud Certified Professional Machine Learning
+                  Engineer</a>
+              </header>
+
+              <p class="cert">
+                <b>Issuer:</b> <span class="issuer">Google Cloud Platform</span>
+                <br>
+                <b>Issued:</b>
+                <em>
+                  <span class="date">2024-06-13</span>
+                </em>
+              </p>
+
+              <hr class="dotted-hr">
+              <header class="dated-header">
+                <a target="_blank" href="https://www.jlpt.jp/e/">Japanese-Language Proficiency Test (JLPT) N3</a>
+              </header>
+
+              <p class="cert">
+                <b>Issuer:</b>
+                <span class="issuer">Japan Ministry of Education, Culture, Sports, Science and
+                  Technology</span>
+                <br>
+                <b>Issued:</b>
+                <em>
+                  <span class="date">2021-01-31</span>
+                </em>
+              </p>
+
+              <hr class="dotted-hr">
+              <header class="dated-header">
+                <a target="_blank" href="https://www.bvna.com/certification/quality-management-system-iso-9001">ISO 9001:2015 and 17025:2017 Internal Auditor (Professional
+                  Certification)</a>
+              </header>
+
+              <p class="cert">
+                <b>Issuer:</b> <span class="issuer">Bureau Veritas</span>
+                <br>
+                <b>Issued:</b>
+                <em>
+                  <span class="date">2017-09-30</span>
+                </em>
+              </p>
+
+              <hr class="dotted-hr">
+              <header class="dated-header">
+                <a target="_blank" href="https://college.kuka.com/action?securedGetRequest&#x3D;1ApuyZRdYoln8z3kR37rBLVEHisIou_rYxREV5o_FtI">Collaborative Robot LBR iiwa Commissioning and Programming</a>
+              </header>
+
+              <p class="cert">
+                <b>Issuer:</b> <span class="issuer">KUKA North America</span>
+                <br>
+                <b>Issued:</b>
+                <em>
+                  <span class="date">2017-09-22</span>
+                </em>
+              </p>
+
+              <hr class="dotted-hr">
+              <header class="dated-header">
+                <a target="_blank" href="https://www.linkedin.com/in/edmundrosewright/details/certifications/1721303649936/single-media-viewer?type&#x3D;DOCUMENT&amp;profileId&#x3D;ACoAAAtSD7wB-VK9WEhLeIV9eexWmCOyGUgqIy8&amp;lipi&#x3D;urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bko5lA7o%2FQ7qLXlwp2Y%2FJjQ%3D%3D">Certified LabVIEW Associate Developer</a>
+              </header>
+
+              <p class="cert">
+                <b>Issuer:</b> <span class="issuer">National Instruments</span>
+                <br>
+                <b>Issued:</b>
+                <em>
+                  <span class="date">2015-01-21</span>
+                </em>
+              </p>
+            </div>
+          </section>
+        </aside>
+        <div>
+          <section>
+            <h3>Summary</h3>
+            <p>
+              A Google Cloud certified engineer driven by curiosity and a
+              passion for lifelong learning. I enjoy tackling challenging
+              problems and exploring new technologies, to create innovative
+              solutions. My approach to product R&amp;D emphasizes rapid
+              iteration and cloud-native architectures, shaped by industry
+              experience in cloud computing, machine learning, machine vision,
+              and industrial automation.
+            </p>
+          </section>
+          <section class="section">
+            <header>
+              <h3 class="section-title">Experience</h3>
+            </header>
+
+            <section id="work">
+              <header>
+                <h4>
+                  <a target="_blank" href="https://qchero.com">QC Hero, Inc.</a>
+
+                  <small class="location">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="work-location">Chicago, IL, USA</span>
+                  </small>
+                </h4>
+                <p class="description">
+                  QC Hero is a B2B SaaS that empowers industrial manufacturers
+                  to use machine learning in their visual inspection and quality
+                  control processes. The platform simplifies training ML models
+                  on massive datasets in the cloud at scale. These models are
+                  used by our customers as high-accuracy, custom defect
+                  detectors in production.
+                </p>
+              </header>
+
+              <div class="timeline">
+                <div>
+                  <label for="work-item-0"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Developer, Co-Founder</h5>
+                    <em class="date">
+                      <span class="startDate">Feb 2020</span>
+                      <span class="endDate">- Current</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      As technical co-founder, I am responsible for the design
+                      and implementation of the platform&#x27;s cloud-native
+                      architecture, ML pipeline, and frontend applications.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        Designed and implemented a robust serverless cloud
+                        architecture that enables event-driven data processing
+                        and asynchronous long-running tasks.
+                      </li>
+                      <li class="page-break">
+                        Developed a fast, scalable ML pipeline that runs on
+                        Google Cloud Vertex AI, uses TPU accelerators, and is
+                        orchestrated with Kubeflow Pipelines.
+                      </li>
+                      <li class="page-break">
+                        Cloud infrastructure built using many GCP services
+                        including Cloud Run, Cloud Functions, Pub/Sub, Cloud
+                        Storage, Monitoring, Firebase Auth and Firestore
+                        database.
+                      </li>
+                      <li class="page-break">
+                        Used Python and Typescript on the backend, modern
+                        Angular for the frontend, and GitLab CI/CD for automated
+                        testing and deployment on GCP.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="dotted-hr">
+              <header>
+                <h4>
+                  <a target="_blank" href="https://www.lm3technologies.com/">LM3 Technologies, Inc.</a>
+
+                  <small class="location">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="work-location">Chicago, IL, USA</span>
+                  </small>
+                </h4>
+                <p class="description">
+                  A software and hardware solutions company that began by
+                  specializing in electromechanical function testing for
+                  automotive seating. In 2017 it developed its flagship product
+                  PAQi™, a machine vision and AI-driven inspection system for
+                  advanced industrial manufacturers.
+                </p>
+              </header>
+
+              <div class="timeline">
+                <div>
+                  <label for="work-item-0"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Senior Software Engineer</h5>
+                    <em class="date">
+                      <span class="startDate">Mar 2019</span>
+                      <span class="endDate">- Feb 2020</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      As the lead developer on a 5-person multidisciplinary
+                      engineering team, developed the machine learning inference
+                      server at the core of the PAQi system. This inference
+                      server allows PAQi to perform classification and object
+                      detection locally or remotely, and use those predictions
+                      to make determinations about the quality of
+                      customer&#x27;s products and locations of defects.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        Used Python and Flask for REST API development,
+                        Tensorflow when serving trained ML models, and Docker
+                        when running as a standalone service.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="work-item-1"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Software Engineer</h5>
+                    <em class="date">
+                      <span class="startDate">Jun 2017</span>
+                      <span class="endDate">- Mar 2019</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      As one of two software developers on a 5-person
+                      multidisciplinary engineering team, developed several new
+                      products that defined the company&#x27;s transition away
+                      from electromechanical function testers to vision and
+                      AI-driven inspection systems, web apps, and services for
+                      product quality testing.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        Developed ML training pipelines built on top of the
+                        Tensorflow Object Detection API framework, and manged
+                        via a Python CLI application.
+                      </li>
+                      <li class="page-break">
+                        Built a custom multi-accelerator linux server for
+                        running ML training pipelines on-premises.
+                      </li>
+                      <li class="page-break">
+                        Achieved Kuka collaborative robot programming
+                        certification in order to develop a multi-point visual
+                        inspection system.
+                      </li>
+                      <li class="page-break">
+                        Developed the mDAQ System, a web app with desktop and
+                        mobile clients, for a large automotive supplier to
+                        manage the tooling and fixtures used in their
+                        manufacturing process. Built with Java, Spring Boot, and
+                        Open Data Kit (ODK) for Mobile.
+                      </li>
+                      <li class="page-break">
+                        Developed a custom web dashboard for a large automotive
+                        supplier to monitor real time industrial manufacturing
+                        and OEE (Overall Equipment Effectiveness) data. Built in
+                        ASP.NET Core with C# and Entity Framework.
+                      </li>
+                      <li class="page-break">
+                        Achieved ISO 9001:2015 and ISO 17025:2017 Internal
+                        Auditor certifications and contributed to the
+                        development of the company&#x27;s quality management
+                        system.
+                      </li>
+                      <li class="page-break">
+                        Effectively captured and interpreted customer
+                        requirements, resulting in well-defined technical
+                        specifications and successful implementations and
+                        product launches.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="work-item-2"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Automated Test Engineer</h5>
+                    <em class="date">
+                      <span class="startDate">Feb 2015</span>
+                      <span class="endDate">- Jun 2017</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      Developed software and hardware platforms for end-of-line
+                      quality control testing for a major electric vehicle
+                      manufacturer during the production of their first car, and
+                      later during the production of their first crossover SUV.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        Joined a team of 3 outsourced developers as the in-house
+                        lead, to deliver 2 applications core to the test
+                        products suite: the Test Sequencer Runtime and the Test
+                        Sequence Editor.
+                      </li>
+                      <li class="page-break">
+                        Programmed in LabVIEW and used NI DAQ embedded hardware
+                        for controls, instrumentation, and test automation.
+                      </li>
+                      <li class="page-break">
+                        Provided technical consulting, support, and training
+                        services to ensure that customers could maintain and
+                        operate their test systems.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="dotted-hr">
+              <header>
+                <h4>
+                  <a target="_blank" href="https://www.usg.com/">USG Corporation, Corporate Innovation Center, Performance
+                    Substrates Laboratory</a>
+
+                  <small class="location">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="work-location">Greater Chicago Area, IL, USA</span>
+                  </small>
+                </h4>
+                <p class="description">
+                  With over $3 billion in revenue, USG is the largest
+                  manufacturer of gypsum products and distributor of drywall in
+                  America.
+                </p>
+              </header>
+
+              <div class="timeline">
+                <div>
+                  <label for="work-item-0"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Senior Technologist</h5>
+                    <em class="date">
+                      <span class="startDate">Apr 2013</span>
+                      <span class="endDate">- Feb 2015</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      As senior technologist, supported the research activities
+                      of several product teams by providing technical guidance
+                      and developing organization-wide test standards and
+                      procedures.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        New product R&amp;D culminating in launch of USG
+                        DUROCK™ BRAND ECOCAP™ Self-Leveling Underlayment.
+                      </li>
+                      <li class="page-break">
+                        Achieved National Instruments LabVIEW Associate
+                        Developer certification to design real-time sensor-based
+                        data acquisition systems for automated experiment
+                        control and monitoring.
+                      </li>
+                      <li class="page-break">
+                        Conducted technical interviews and facilitated
+                        onboarding/training for new team members, ensuring their
+                        proficiency in laboratory equipment, procedures, and
+                        safety protocols.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="work-item-1"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Laboratory Technician</h5>
+                    <em class="date">
+                      <span class="startDate">Feb 2012</span>
+                      <span class="endDate">- Apr 2013</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      As a technician on the New Product Development team,
+                      developed and performed experiments to characterize the
+                      physical properties of cement-based materials.
+                    </div>
+
+                    <ul class="highlights">
+                      <li class="page-break">
+                        Installed and maintained precision test equipment and
+                        instrumentation.
+                      </li>
+                      <li class="page-break">
+                        Acquired, analyzed, and documented test data in reports,
+                        spreadsheets, and presentations to communicate technical
+                        details of new product research.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="dotted-hr">
+              <header>
+                <h4>
+                  <a target="_blank" href="https://www.depaul.edu/">DePaul University, Physics Department</a>
+
+                  <small class="location">
+                    <span class="fas fa-map-marker-alt"></span>
+                    <span class="work-location">Chicago, IL, USA</span>
+                  </small>
+                </h4>
+              </header>
+
+              <div class="timeline">
+                <div>
+                  <label for="work-item-0"></label>
+
+                  <header class="dated-header">
+                    <h5 class="position">Teaching Assistant</h5>
+                    <em class="date">
+                      <span class="startDate">Sep 2010</span>
+                      <span class="endDate">- Jun 2011</span>
+                    </em>
+                  </header>
+
+                  <div class="item" id="work-item">
+                    <div class="summary">
+                      Instructed freshman physics labs, ensuring a comprehensive
+                      understanding of key concepts through engaging
+                      demonstrations and experiments.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+          <div>
+            <h3>Education</h3>
+
+            <div class="item">
+              <header class="dated-header">
+                <h5>
+                  <a target="_blank" href="https://www.kicl.ac.jp/">Kyoto Institute of Culture and Language</a>
+                </h5>
+
+                <em class="italic pull-right">
+                  <span class="startDate">Oct 2019</span>
+                  <span class="endDate"> - Sep 2021</span>
+                </em>
+              </header>
+
+              <p>
+                Graduation Certificate, 2-year intensive Japanese language
+                program
+              </p>
+            </div>
+
+            <div class="item">
+              <header class="dated-header">
+                <h5>
+                  <a target="_blank" href="https://www.depaul.edu/">DePaul University</a>
+                </h5>
+
+                <em class="italic pull-right">
+                  <span class="startDate">Dec 2015</span>
+                  <span class="endDate"> - Dec 2019</span>
+                </em>
+              </header>
+
+              <p>
+                Master of Science (MS) with Distinction, Software Engineering
+                (Software Architecture)
+              </p>
+            </div>
+
+            <div class="item">
+              <header class="dated-header">
+                <h5>
+                  <a target="_blank" href="https://www.depaul.edu/">DePaul University</a>
+                </h5>
+
+                <em class="italic pull-right">
+                  <span class="startDate">Dec 2005</span>
+                  <span class="endDate"> - Dec 2011</span>
+                </em>
+              </header>
+
+              <p>
+                Bachelor of Science (BS), Physics, Minors in Mathematics and
+                Japanese Studies
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <button id="print-button" class="print-button no-print outline" title="This page is optimized for printing" onclick="window.print()">
+      Print me!
+    </button>
+  </body>
+</html>
