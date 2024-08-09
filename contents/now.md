@@ -42,6 +42,7 @@ nothing feels mundane, and everyday I'm learning something new!
 ## Recent Travels 🗾
 
 - [Guest House Mikansei](https://www.guesthousemikansei.com/) in Kawanehon, Shizuoka 😻
+- [Fuji-Q Highland](https://www.fujiq.jp/) theme park, near Mt. Fuji in Yamanashi 🎢
 - [Atami, Shizuoka](https://maps.app.goo.gl/S6kRbtSkosZ5LwRA7)
 - [Hiroshima, Hiroshima](https://maps.app.goo.gl/bgFmVoyPZTeiTs8E8)
   - [Itsukushima (Miyajima), Hiroshima](https://maps.app.goo.gl/p4Axd9BkesGVd2XZ6) ⛩️
