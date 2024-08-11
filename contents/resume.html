@@ -7,6 +7,7 @@ eleventyNavigation:
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edmund Rosewright</title>
     <link
       rel="stylesheet"
@@ -40,13 +41,25 @@ eleventyNavigation:
           }
         }
       }
+
       .layout {
+        grid-column-gap: var(--pico-grid-column-gap);
+        grid-row-gap: var(--pico-grid-row-gap);
         display: grid;
-        grid-template-columns: 1fr 4fr;
-        grid-template-rows: 1fr;
-        gap: 0px 20px;
-        grid-auto-flow: row;
+        grid-template-columns: 1fr;
       }
+
+      /* bootstrap small breakpoint */
+      @media (min-width: 768px), print {
+        .layout {
+          display: grid;
+          grid-template-columns: 1fr 4fr;
+          grid-template-rows: 1fr;
+          gap: 0px 20px;
+          grid-auto-flow: row;
+        }
+      }
+
       .timeline > div {
         position: relative;
       }
@@ -116,8 +129,16 @@ eleventyNavigation:
 
       .print-button {
         position: fixed;
-        top: 20px;
         right: 20px;
+        bottom: 20px;
+      }
+
+      /* bootstrap small breakpoint */
+      @media (min-width: 768px) {
+        .print-button {
+          bottom: auto;
+          top: 20px;
+        }
       }
 
       @media print {
@@ -146,9 +167,6 @@ eleventyNavigation:
           :root {
             --pico-font-size: 87.5%;
             /* Original: 106.25% */
-          }
-          .grid {
-            grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
           }
         }
 
