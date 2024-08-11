@@ -47,6 +47,22 @@
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
 
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  min-height: 100vh;
+}
+
+body > main {
+  margin-bottom: calc(var(--pico-spacing) * 4);
+}
+
 .text-center {
   text-align: center;
 }
