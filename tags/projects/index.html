@@ -123,6 +123,31 @@ body > main {
   width: 100%;
   height: 100%;
 }
+
+/* hamburger */
+#hamburger {
+  summary {
+    color: var(--pico-primary);
+  }
+
+  ul > li > a {
+    color: var(--pico-primary);
+  }
+}
+
+.large-screen-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .large-screen-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
 @charset "UTF-8";/*!
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
@@ -163,15 +188,46 @@ body > main {
             </li>
           </ul>
 
-          <ul><li><a href="/">Home</a></li>
+          <li class="mobile-only">
+            <details id="hamburger" class="dropdown hamburger">
+              <summary>&Congruent;</summary>
+              
+              <ul dir="rtl">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/about/">About</a>
+                </li>
+                <li>
+                  <a href="/now/">Now</a>
+                </li>
+                <li>
+                  <a href="/blog/">Blog</a>
+                </li>
+                <li>
+                  <a href="/projects/">Projects</a>
+                </li>
+                <li>
+                  <a href="/resume/">Resume</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <div class="large-screen-only">
+            <ul><li><a href="/">Home</a></li>
 <li><a href="/about/">About</a></li>
 <li><a href="/now/">Now</a></li>
 <li><a href="/blog/">Blog</a></li>
 <li><a href="/projects/">Projects</a></li>
 <li><a href="/resume/">Resume</a></li></ul>
+          </div>
         </nav>
       </div>
     </header>
+
+
     <main id="skip" class="container">
 
 <h1>Tagged “projects”</h1>
