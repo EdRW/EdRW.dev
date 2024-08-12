@@ -102,3 +102,28 @@ body > main {
   width: 100%;
   height: 100%;
 }
+
+/* hamburger */
+#hamburger {
+  summary {
+    color: var(--pico-primary);
+  }
+
+  ul > li > a {
+    color: var(--pico-primary);
+  }
+}
+
+.large-screen-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .large-screen-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}

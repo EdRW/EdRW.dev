@@ -1,0 +1,34 @@
+<header>
+      <div class="container">
+        <nav>
+          <h2 class="visually-hidden">Top level navigation menu</h2>
+          <ul>
+            <li>
+              <strong
+                ><a href="/" aria-label="EdRW.dev Homepage"
+                  >{{ metadata.title }}</a
+                ></strong
+              >
+            </li>
+          </ul>
+
+          <li class="mobile-only">
+            <details id="hamburger" class="dropdown hamburger">
+              <summary>&Congruent;</summary>
+              {% set navPages = collections.all | eleventyNavigation %}
+              <ul dir="rtl">
+              {%- for entry in navPages %}
+                <li{% if entry.url == page.url %} class="active-page"{% endif %}>
+                  <a href="{{ entry.url }}">{{ entry.title }}</a>
+                </li>
+              {%- endfor %}
+              </ul>
+            </details>
+          </li>
+
+          <div class="large-screen-only">
+            {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+          </div>
+        </nav>
+      </div>
+    </header>

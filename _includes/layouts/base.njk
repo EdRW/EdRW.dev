@@ -18,24 +18,8 @@
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-    <header>
-      <div class="container">
-        <nav>
-          <h2 class="visually-hidden">Top level navigation menu</h2>
-          <ul>
-            <li>
-              <strong
-                ><a href="/" aria-label="EdRW.dev Homepage"
-                  >{{ metadata.title }}</a
-                ></strong
-              >
-            </li>
-          </ul>
+    {% include "fragments/header.njk" %}
 
-          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-        </nav>
-      </div>
-    </header>
     <main id="skip" class="container">{{ content | safe }}</main>
 
     {% include "fragments/footer.njk" %}

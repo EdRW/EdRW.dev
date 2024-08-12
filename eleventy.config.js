@@ -22,6 +22,7 @@ export default function (eleventyConfig) {
 
   // Watch content images for the image pipeline.
   eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+  eleventyConfig.addWatchTarget("public/**/*");
 
   eleventyConfig.addFilter("stringify", (value) =>
     JSON.stringify(value, null, 2),
