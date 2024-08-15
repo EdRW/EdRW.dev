@@ -2,22 +2,10 @@
   <div class="container">
     <div class="grid">
       <div class="text-center">
-        <div>Credits</div>
-        <p>
-          Built with
-          <a href="https://www.11ty.dev/">Eleventy</a> and
-          <a href="https://picocss.com">pico css</a>.
-          <br />
-          Check out the site
-          <a href="https://github.com/EdRW/edrw.dev">source</a>.
-        </p>
-      </div>
-
-      <div class="text-center">
-        <div>Around the web</div>
+        <div><b>Around the web</b></div>
         <div class="social">
           {%- for link in metadata.author.links %}
-            <div>
+            {%- if link.name and link.url %}
               <a
                 href="{{ link.url }}"
                 aria-label="{{ link.name }}"
@@ -26,14 +14,26 @@
                 {% if  link.icon %}
                   <i class="{{ link.icon }}"></i>
                 {% else %}
-                  <i class="social-icon"
-                    >{% include "public/svg/" + link.name +".svg" %}</i
-                  >
+                  {% include "public/svg/" + link.name +".svg" %}
                 {% endif %}
               </a>
-            </div>
+            {%- endif %}
           {%- endfor %}
         </div>
+      </div>
+
+      <div class="text-center">
+        <div><b>Credits</b></div>
+        <p>
+          Built with
+          <a href="https://www.11ty.dev/">Eleventy</a> and
+          <a href="https://picocss.com">pico css</a>
+          <br />
+          Icons are from <a href="https://fontawesome.com/">Font Awesome</a>.
+          <br />
+          Check out the site
+          <a href="https://github.com/EdRW/edrw.dev">source</a>.
+        </p>
       </div>
 
       <div class="text-center">

@@ -7,21 +7,31 @@ export default {
     name: "Edmund Rosewright",
     url: "https://edrw.dev/about",
     location: "Tokyo, Japan",
+    /**
+     * if font awesome icon class is left blank,
+     * we will look for an icon file at
+     * public/svg/{name}.svg
+     */
     links: [
+      {
+        name: "mail",
+        url: "mailto:hi@edrw.dev",
+        icon: "fa-solid fa-envelope",
+      },
       {
         name: "github",
         url: "https://github.com/EdRW",
-        icon: "",
+        icon: "fa-brands fa-github",
       },
       {
         name: "gitlab",
         url: "https://gitlab.com/EdRW",
-        icon: "",
+        icon: "fa-brands fa-gitlab",
       },
       {
         name: "linkedin",
         url: "https://www.linkedin.com/in/edmundrosewright/",
-        icon: "",
+        icon: "fa-brands fa-linkedin",
       },
       {
         name: "exercism",
