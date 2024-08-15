@@ -54,6 +54,13 @@ body > main {
   display: flex;
   justify-content: space-evenly;
   gap: 1em;
+
+  svg {
+    /* https://docs.fontawesome.com/web/add-icons/svg-symbols */
+    height: 1rem;
+    width: 1rem;
+    vertical-align: -0.125em;
+  }
 }
 
 .pt-2 {
