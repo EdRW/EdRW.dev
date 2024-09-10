@@ -18,6 +18,22 @@
 /** @type {Project[]} */
 const projects = [
   {
+    name: "Daily Love Letter",
+    date: new Date("2022-04"),
+    description:
+      "A progressive web app that delivers a hand-written love letter \
+      to my partner every day. It also allows me to schedule new love letters \
+      to be delivered on specific dates. Once a letter is delivered, my partner can \
+      reschedule it to be redelivered periodically (monthly, yearly) \
+      or on a specific date in the future, like anniversaries and birthdays. \
+      It only allows 2 specific users, but I'm planning a V2 to open it up to \
+      more users in the future. 😻",
+    /**@type {Tags} */
+    tags: ["Personal", "Typescript", "React", "Firebase", "PWA"],
+    url: "https://daily-love-letter.web.app",
+    image: "./img/love-letter.png",
+  },
+  {
     name: "PAQi's Vision Inference Server",
     date: new Date("2019-07"),
     description:
