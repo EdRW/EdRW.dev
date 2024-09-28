@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     {% include "fragments/css-bundle.njk" %}
+    {{ extraHeadContent | safe }}
   </head>
   <body>
     <a href="#skip" class="visually-hidden">Skip to main content</a>

@@ -1,0 +1,18 @@
+---
+layout: layouts/home.njk
+eleventyExcludeFromCollections: true
+permalink: /qr-code
+qrCodeUrl: "https://connpass.com/user/EdRW/"
+eleventyComputed:
+  extraHeadContent: '
+<meta http-equiv="refresh" content="0; url={{ qrCodeUrl }}">
+<script type="text/javascript">
+window.location.href = "{{ qrCodeUrl }}"
+</script>
+'
+---
+
+<p>
+  If you are not redirected automatically, follow this url:
+  <a href="{{ qrCodeUrl }}">{{ qrCodeUrl }}</a>.
+</p>
