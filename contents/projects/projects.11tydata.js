@@ -34,6 +34,19 @@ const projects = [
     image: "./img/love-letter.png",
   },
   {
+    name: "QC Hero",
+    date: new Date("2020-02"),
+    description:
+      "A B2B SaaS that empowers industrial manufacturers to use machine learning \
+      in their visual inspection and <b>Q</b>uality <b>C</b>ontrol processes. \
+      The platform simplifies training ML models on massive datasets in the cloud at scale. \
+      These models are used by our customers as high-accuracy, custom defect detectors in production.",
+    /**@type {Tags} */
+    tags: ["Professional", "Typescript", "Python", "GCP", "Machine Learning"],
+    url: "https://docs.qchero.com/",
+    image: "./img/qc-hero-1.png",
+  },
+  {
     name: "PAQi's Vision Inference Server",
     date: new Date("2019-07"),
     description:
