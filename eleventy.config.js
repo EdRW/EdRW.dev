@@ -15,7 +15,14 @@ export default function (eleventyConfig) {
   });
 
   // @ts-ignore
-  eleventyConfig.addBundle("css");
+  eleventyConfig.addBundle("css", {
+    transforms: [
+      /** @param {string} content  */
+      function (content) {
+        return content.replace(/\.\.\//g, "/");
+      },
+    ],
+  });
 
   // Run Eleventy when these files change:
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets
