@@ -1,31 +1,59 @@
 {%- css %}
   .postlist { counter-reset: start-from
-  {{ (postslistCounter or postslist.length) + 1 }} }
+  {{ (postslistCounter or postslist.length) + 1 }}; list-style-type: none;}
 {% endcss %}
-{% if not postlist %}
-  <p>Awesome posts coming soon!</p>
-  <img
-    src="/img/black-cat-typing.gif"
-    alt="A black cat frantically typing on a laptop"
-    eleventy:ignore
-  />
-{% else %}
+
+{% if postslist %}
   <ol reversed class="postlist">
     {% for post in postslist | reverse %}
       <li
         class="postlist-item{% if post.url == url %}postlist-item-active{% endif %}"
       >
-        <a href="{{ post.url }}" class="postlist-link"
-          >{% if post.data.title %}
-            {{ post.data.title }}
-          {% else %}
-            <code>{{ post.url }}</code>
-          {% endif %}</a
-        >
-        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}"
-          >{{ post.date | readableDate("LLLL yyyy") }}</time
-        >
+        <article>
+          <hgroup>
+            <h2>
+              <a href="{{ post.url }}" class="postlist-link"
+                >{% if post.data.title %}
+                  {{ post.data.title }}
+                {% else %}
+                  <code>{{ post.url }}</code>
+                {% endif %}</a
+              >
+            </h2>
+            <p>
+              <small>
+                <time
+                  class="postlist-date"
+                  datetime="{{ post.date | htmlDateString }}"
+                  >{{ post.date | readableDate("LLLL yyyy") }}</time
+                >
+                <span aria-hidden="true">|</span>
+                <span class="postlist-item-tags">
+                  {% for tag in post.data.tags | filterTagList %}
+                    <a href="/tags/{{ tag | slug }}/" class="postlist-tag"
+                      >{{ tag }}</a
+                    >
+                  {% endfor %}
+                </span>
+              </small>
+            </p>
+          </hgroup>
+          <p class="postlist-excerpt">{{ post.data.description }}</p>
+        </article>
       </li>
     {% endfor %}
   </ol>
+{% endif %}
+
+{% if postslist.length < 10 %}
+  <div class="text-center">
+    <p>
+      {{ "A" if postslist.length <= 0 else "More a" }}wesome posts coming soon!
+    </p>
+    <img
+      src="/img/black-cat-typing.gif"
+      alt="A black cat frantically typing on a laptop"
+      eleventy:ignore
+    />
+  </div>
 {% endif %}
